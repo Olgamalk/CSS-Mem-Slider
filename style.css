@@ -15,7 +15,7 @@ li {
   text-transform: uppercase;
 }
 .slider {
-  max-width: 50vw;
+  max-width: 70vw;
   margin: 2% auto auto auto;
   background-color: black;
   padding: 2rem;
@@ -28,7 +28,7 @@ li {
   overflow: hidden;
 }  
 .slider-item {
-  max-width: 50vw;
+  max-width: 70vw;
   margin: 0 auto;
 }
 .tenor-gif-embed {
@@ -151,12 +151,16 @@ label,
 @media screen and (max-width: 800px) {
   .slider {
       padding: 1rem;
+      max-width: 100vh;
   }
   .slides-text {
       flex-direction: column-reverse;
       flex-wrap: wrap;
       justify-content: stretch;
       align-items: center;
+  }
+  .slider-item {
+    max-width: 94vw;
   }
   label {
       width: 1.5rem;
