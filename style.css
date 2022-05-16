@@ -1,0 +1,180 @@
+@keyframes for-header {
+  50%   {transform: translate(0%, 0);}
+  25%   {transform: translate(25%, 0);}
+  0%  {transform: translate(100%, 0);}
+}
+body {  
+  font-size: 1rem;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style-type: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.slider {
+  max-width: 70vw;
+  margin: 2% auto auto auto;
+  background-color: black;
+  padding: 2rem;
+  color: white;
+  border-radius: 1rem;
+}  
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.slider-item {
+  max-width: 70vw;
+  margin: 0 auto;
+}
+.tenor-gif-embed {
+  width: 100%;
+}
+label,
+#active, 
+img {
+  user-select: none;
+}
+input {
+  display: none;
+}
+#slider-one:checked ~ .slides .inner-container {
+  margin-left: 0;
+}
+#slider-two:checked ~ .slides .inner-container {
+  margin-left: -100%;
+}
+#slider-three:checked ~ .slides .inner-container {
+  margin-left: -200%;
+}
+#slider-four:checked ~ .slides .inner-container {
+  margin-left: -300%;
+}
+#slider-five:checked ~ .slides .inner-container {
+  margin-left: -400%;
+}
+.slides .inner-container {
+  display: flex;
+  width: 500%;
+  line-height: 0;
+}
+.slides .slider-item {
+  width: 20%;
+  display: flex;
+}
+label {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+}
+#active label:hover span {
+  background-color: #710707;
+  opacity: 0.8;
+  
+}
+#active label:active span {
+  background-color: gold;
+  cursor: url('./assets/circle.svg'), default;
+}
+
+#active label span {
+  border-radius: 50%;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  margin: auto;
+  cursor: pointer;
+}
+.slides-text {
+  display: flex;
+  justify-content: space-between;
+}
+#active {
+  display: flex;
+  align-items: center;
+}
+.slider-text {
+  display: none;
+}
+.text-list {
+  cursor: pointer;
+}
+#slider-one:checked ~ .slides-text .text-list .slider-text-one,
+#slider-two:checked ~ .slides-text .slider-text-two,
+#slider-three:checked ~ .slides-text .slider-text-three,
+#slider-four:checked ~ .slides-text .slider-text-four,
+#slider-five:checked ~ .slides-text .slider-text-five {
+  display: block;
+  transition: all 800ms cubic-bezier(0.770,0.000,0.175,1.000);
+  animation-name: for-header;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+#slider-one:checked ~ .slides-text #active label:nth-child(1) span,
+#slider-two:checked ~ .slides-text #active label:nth-child(2) span,
+#slider-three:checked ~ .slides-text #active label:nth-child(3) span,
+#slider-four:checked ~ .slides-text #active label:nth-child(4) span,
+#slider-five:checked ~ .slides-text #active label:nth-child(5) span {
+  background-color: #710707;
+  border: 0.2rem solid white;
+  box-sizing: border-box;
+}
+.slides .inner-container {
+  transform: translateZ(0);
+  transition: all 800ms cubic-bezier(0.770,0.000,0.175,1.000);
+  transition-timing-function: cubic-bezier(0.770,0.000,0.175,1.000);
+}
+label {
+  transition: opacity 0.2s ease-out
+}
+#slider-one:checked ~ .slides .slider-item:nth-child(1) h3,
+#slider-two:checked ~ .slides .slider-item:nth-child(2) h3,
+#slider-three:checked ~ .slides .slider-item:nth-child(3) h3,
+#slider-four:checked ~ .slides .slider-item:nth-child(4) h3,
+#slider-five:checked ~ .slides .slider-item:nth-child(5) h3 {
+  opacity: 1;
+  transition:all 1s ease-out 0.6s
+}
+label,
+.slides,
+#active,
+#active label {
+  transition: all 0.5s ease-out;
+}
+@media screen and (max-width: 800px) {
+  .slider {
+    padding: 1rem;
+    max-width: 100vh;
+  }
+  .slides-text {
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    align-items: center;
+  }
+  .slider-item {
+    max-width: 94vw;
+  }
+  #active {
+    display: flex;
+    align-items: center;
+  }
+  #slider-one:checked ~ .slides-text #active label:nth-child(1) span,
+  #slider-two:checked ~ .slides-text #active label:nth-child(2) span,
+  #slider-three:checked ~ .slides-text #active label:nth-child(3) span,
+  #slider-four:checked ~ .slides-text #active label:nth-child(4) span,
+  #slider-five:checked ~ .slides-text #active label:nth-child(5) span {
+    border: 0.15rem solid white;
+  }
+  li {
+    text-align: center;
+  }
+}
