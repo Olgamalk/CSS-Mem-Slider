@@ -162,19 +162,10 @@ label,
   .slider-item {
     max-width: 94vw;
   }
-  label {
-      width: 1.5rem;
-      height: 1.5rem;
-  }
   #active {
       display: flex;
       align-items: center;
   }
-  #active label span {
-      width: 1rem;
-      height: 1rem;
-  }
-
   #slider-one:checked ~ .slides-text #active label:nth-child(1) span,
   #slider-two:checked ~ .slides-text #active label:nth-child(2) span,
   #slider-three:checked ~ .slides-text #active label:nth-child(3) span,
@@ -183,7 +174,7 @@ label,
       border: 0.15rem solid white;
   }
   li {
-      font-size: 1rem;
+      /* font-size: 1rem; */
       text-align: center;
   }
 }
